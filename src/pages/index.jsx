@@ -4,7 +4,9 @@ import Layout from "../components/layout/Layout";
 export default function Home() {
   return (
     <>
-      <Layout>Home Page</Layout>
+      <Layout>
+        <section className="section">Home Page</section>
+      </Layout>
     </>
   );
 }
