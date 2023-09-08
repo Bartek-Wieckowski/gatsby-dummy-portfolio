@@ -1,29 +1,55 @@
-import { Link } from 'gatsby'
-import React from 'react'
-
+import { Link } from "gatsby";
+import React, { useState } from "react";
+import imagesPath from "../../images/images";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <header class="header">
-    <nav class="nav grid">
+    <header className="header">
+      <nav className="nav grid">
         <div>
-            <a href="#" class="nav__logo">Marlon</a>
+          <Link to="/" className="nav__logo">
+            theBart
+          </Link>
         </div>
 
-        <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
-                <li class="nav__item"><Link to="/home" class="nav__link active">Home</Link></li>
-                <li class="nav__item"><Link to="/about" class="nav__link">About</Link></li>
-                <li class="nav__item"><Link to="/skills" class="nav__link">Skills</Link></li>
-                <li class="nav__item"><Link to="/work" class="nav__link">Work</Link></li>
-                <li class="nav__item"><Link to="/contact" class="nav__link">Contact</Link></li>
-            </ul>
+        <div className={`nav__menu ${isOpen ? "show" : ""}`} id="nav-menu">
+          <ul className="nav__list">
+            <li className="nav__item">
+              <Link to="/home" className="nav__link active">
+                Home
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link to="/about" className="nav__link">
+                About
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link to="/skills" className="nav__link">
+                Skills
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link to="/work" className="nav__link">
+                Work
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link to="/contact" className="nav__link">
+                Contact
+              </Link>
+            </li>
+          </ul>
         </div>
 
-        <div class="nav__toggle" id="nav-toggle">
-            <i class='bx bx-menu'></i>
+        <div className="nav__toggle" id="nav-toggle" onClick={() => handleClick()}>
+          <img src={imagesPath.hamburger} alt="" className="hamburger" />
         </div>
-    </nav>
-</header>
-  )
+      </nav>
+    </header>
+  );
 }
