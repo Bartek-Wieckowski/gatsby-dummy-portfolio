@@ -19,27 +19,27 @@ export default function Navbar() {
         <div className={`nav__menu ${isOpen ? "show" : ""}`} id="nav-menu">
           <ul className="nav__list">
             <li className="nav__item">
-              <Link to="/home" className="nav__link active">
+              <Link to="/" className="nav__link" activeClassName="active">
                 Home
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/about" className="nav__link">
+              <Link to="/about" className="nav__link" activeClassName="active">
                 About
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/skills" className="nav__link">
+              <Link to="/skills" className="nav__link" activeClassName="active">
                 Skills
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/work" className="nav__link">
+              <Link to="/work" className="nav__link" activeClassName="active">
                 Work
               </Link>
             </li>
             <li className="nav__item">
-              <Link to="/contact" className="nav__link">
+              <Link to="/contact" className="nav__link" activeClassName="active">
                 Contact
               </Link>
             </li>

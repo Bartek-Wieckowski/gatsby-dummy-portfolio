@@ -161,7 +161,9 @@ img {
     font-size: 1.5rem;
     cursor: pointer;
 }
-
+.active {
+    color: var(--first-color) !important;
+}
 .active::after {
     position: absolute;
     content: '';
