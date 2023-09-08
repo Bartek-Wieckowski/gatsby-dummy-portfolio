@@ -12,7 +12,7 @@ export default function Navbar() {
       <nav className="nav grid">
         <div>
           <Link to="/" className="nav__logo">
-            theBart
+            theBart practice
           </Link>
         </div>
 
