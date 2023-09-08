@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../../components/layout/Layout";
-import imagesPath from "../../images/images";
 
 
 export default function About() {
@@ -9,7 +8,7 @@ export default function About() {
       <section className="about section " id="about">
         <div className="about__container grid">
           <div className="about__img">
-            <img src={imagesPath.man} alt="" />
+            <img src="/images/man.png" alt="" />
           </div>
           <div>
             <h2 className="about__subtitle">the best frontend devs</h2>

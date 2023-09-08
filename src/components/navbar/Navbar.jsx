@@ -1,6 +1,5 @@
 import { Link } from "gatsby";
 import React, { useState } from "react";
-import imagesPath from "../../images/images";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +46,7 @@ export default function Navbar() {
         </div>
 
         <div className="nav__toggle" id="nav-toggle" onClick={() => handleClick()}>
-          <img src={imagesPath.hamburger} alt="" className="hamburger" />
+          <img src="/images/list-fill.svg" alt="" className="hamburger" />
         </div>
       </nav>
     </header>
