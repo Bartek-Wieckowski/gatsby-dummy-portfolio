@@ -9,4 +9,9 @@
  */
 module.exports = {
   plugins: [],
-}
+  siteMetadata: {
+    title: "The Best Portfolio devs",
+    description: "dev portoflio",
+    copyright: "This website is copyright 2023 theBart ",
+  },
+};
