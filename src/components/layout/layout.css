@@ -307,22 +307,6 @@ img {
     z-index: var(--z-back);
 }
 
-.skills__html {
-    width: 95%;
-}
-
-.skills__css {
-    width: 85%;
-}
-
-.skills__js {
-    width: 65%;
-}
-
-.skills__ux {
-    width: 85%;
-}
-
 .skills__img {
     border-radius: .5rem;
 }
