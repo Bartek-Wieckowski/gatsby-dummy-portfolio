@@ -1,7 +1,14 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Layout from "../../components/layout/Layout";
+import { motion } from "framer-motion";
 
 export default function Work() {
+  const rotate = {
+    initial: { rotate: 0 },
+    animate: { rotate: 360 },
+    exit: { rotate: 0 },
+  };
+
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState([]);
 
@@ -53,7 +60,12 @@ export default function Work() {
   return (
     <Layout>
       {isLoading && <div className="skeleton-loader"></div>}
-      <section className="section work">
+      <motion.section
+        className="section work"
+        initial={{ rotate: 0 }}
+        animate={{ rotate: 360, transition: { delay: 1.3 } }}
+        exit={{ rotate: 0 }}
+      >
         <div className="work__container grid">
           {images.map((img) => (
             <div className="work__img" key={dummyIDForKey()}>
@@ -61,7 +73,7 @@ export default function Work() {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
     </Layout>
   );
 }

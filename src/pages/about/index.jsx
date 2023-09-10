@@ -1,11 +1,23 @@
 import React from "react";
 import Layout from "../../components/layout/Layout";
-
+import { motion } from "framer-motion";
 
 export default function About() {
+  const slideLeftEffect = {
+    initial: { x: "-100%" },
+    animate: { x: 0 },
+    exit: { x: "100%" },
+  };
   return (
     <Layout>
-      <section className="about section " id="about">
+      <motion.section
+        className="about section "
+        id="about"
+        variants={slideLeftEffect}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
         <div className="about__container grid">
           <div className="about__img">
             <img src="/images/man.png" alt="" />
@@ -19,7 +31,7 @@ export default function About() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
     </Layout>
   );
 }

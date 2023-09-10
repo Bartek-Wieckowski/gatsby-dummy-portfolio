@@ -1,12 +1,24 @@
 import React from "react";
 import Layout from "../components/layout/Layout";
 import { Link, graphql } from "gatsby";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const slideFromUp = {
+    initial: { y: "-100%" },
+    animate: { y: 0, transition: {duration: 2} },
+    exit: { y: "100%", transition: {duration: 2} },
+  };
   return (
     <>
       <Layout>
-        <section className="section home grid">
+        <motion.section
+          className="section home grid"
+          variants={slideFromUp}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
           <div className="home__data">
             <h1 className="home__title">
               Trust
@@ -48,19 +60,19 @@ export default function Home() {
               </g>
             </svg>
           </div>
-        </section>
+        </motion.section>
       </Layout>
     </>
   );
 }
 
 export const query = graphql`
-query SiteInfo {
-  site {
-    siteMetadata {
-      description
-      title
+  query SiteInfo {
+    site {
+      siteMetadata {
+        description
+        title
+      }
     }
   }
-}
-`
+`;

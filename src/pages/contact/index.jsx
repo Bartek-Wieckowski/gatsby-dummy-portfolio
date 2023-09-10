@@ -1,10 +1,23 @@
 import React from "react";
 import Layout from "../../components/layout/Layout";
+import { motion } from "framer-motion";
 
 export default function Contact() {
+  const slideLeftEffect = {
+    initial: { x: "-100%" },
+    animate: { x: 0 },
+    exit: { x: "100%" },
+  };
+
   return (
     <Layout>
-      <section className="section contact">
+      <motion.section
+        className="section contact"
+        variants={slideLeftEffect}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
         <div className="contact__container grid">
           <form action="" className="contact__form">
             <input type="text" placeholder="Name" className="contact__input" />
@@ -13,7 +26,7 @@ export default function Contact() {
             <input type="button" value="Send" className="contact__button button" />
           </form>
         </div>
-      </section>
+      </motion.section>
     </Layout>
   );
 }

@@ -1,33 +1,34 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout";
 import ProgressBar from "../../components/progress-bar/ProgressBar";
+import { motion } from "framer-motion";
 
 export default function Skills() {
   const [progressBarValue, setProgressBarValue] = useState([
     {
       id: "html",
-      title:"HTML5",
+      title: "HTML5",
       percent: 0,
       targetPercent: 85,
       img: "/images/file-html-fill.svg",
     },
     {
       id: "css",
-      title:"CSS3",
+      title: "CSS3",
       percent: 0,
       targetPercent: 93,
       img: "/images/file-css-fill.svg",
     },
     {
       id: "js",
-      title:"JavaScript",
+      title: "JavaScript",
       percent: 0,
       targetPercent: 95,
       img: "/images/file-js-fill.svg",
     },
     {
       id: "ui",
-      title:"UI",
+      title: "UI",
       percent: 0,
       targetPercent: 90,
       img: "/images/pen-fill.svg",
@@ -50,7 +51,13 @@ export default function Skills() {
 
   return (
     <Layout>
-      <section className="skills section" id="skills">
+      <motion.section
+        className="skills section"
+        id="skills"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <h2 className="section-title">Skills</h2>
         <div className="skills__container grid">
           <div>
@@ -67,7 +74,7 @@ export default function Skills() {
             <img src="/images/skill.jpg" alt="" className="skills__img" />
           </div>
         </div>
-      </section>
+      </motion.section>
     </Layout>
   );
 }
