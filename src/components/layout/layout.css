@@ -62,7 +62,8 @@ img {
     height: auto;
     display: block;
 }
-.main{
+
+.main {
     min-height: calc(100vh - 2rem)
 }
 
@@ -366,7 +367,6 @@ img {
     border-radius: .5rem;
     border: 1.5px solid var(--second-color);
     outline: none;
-    margin-bottom: var(--mb-4);
 }
 
 .contact__button {
@@ -385,12 +385,22 @@ img {
     text-align: center;
     font-weight: var(--font-semi);
     padding: 2rem 0;
-  }
-  
-  .footer__title {
+}
+
+.footer__title {
     font-size: 2rem;
     margin-bottom: var(--mb-4);
-  }
+}
+
+.errorMsg {
+    color: red;
+    margin: 0;
+    margin-bottom: var(--mb-4);
+}
+
+.mar-bott {
+    margin-bottom: var(--mb-4);
+}
 
 /* media queries */
 
