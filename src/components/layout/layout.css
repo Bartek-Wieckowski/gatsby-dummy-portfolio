@@ -398,6 +398,10 @@ img {
     margin-bottom: var(--mb-4);
 }
 
+.disabledOwn {
+    opacity: 0.5;
+}
+
 .mar-bott {
     margin-bottom: var(--mb-4);
 }
