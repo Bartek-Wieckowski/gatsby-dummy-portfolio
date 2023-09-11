@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Layout from "../../components/layout/Layout";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
@@ -9,8 +9,8 @@ export default function Contact() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-    getValues,
   } = useForm();
+  const form = useRef();
 
   const slideLeftEffect = {
     initial: { x: "-100%" },
@@ -18,10 +18,14 @@ export default function Contact() {
     exit: { x: "100%" },
   };
 
-  const onSubmit = (data) => {
-    console.log("send");
+  const onSubmit = async () => {
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    reset();
+      reset();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -34,7 +38,7 @@ export default function Contact() {
         exit="exit"
       >
         <div className="contact__container grid">
-          <form action="" className="contact__form" onSubmit={handleSubmit(onSubmit)}>
+          <form ref={form} className="contact__form" onSubmit={handleSubmit(onSubmit)}>
             <input
               type="text"
               placeholder="Name"
@@ -58,7 +62,11 @@ export default function Contact() {
               {...register("message", { required: "Message is required" })}
             ></textarea>
             {errors.message && <p className="errorMsg">{`${errors.message.message}`}</p>}
-            <button type="submit" className="contact__button button" disabled={isSubmitting}>
+            <button
+              type="submit"
+              className={`contact__button button ${isSubmitting ? "disabledOwn" : ""}`}
+              disabled={isSubmitting}
+            >
               Send
             </button>
           </form>
