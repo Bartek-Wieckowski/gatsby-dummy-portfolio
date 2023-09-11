@@ -12,6 +12,6 @@ module.exports = {
   siteMetadata: {
     title: "The Best Portfolio devs",
     description: "dev portoflio",
-    copyright: "This website is copyright 2023 theBart ",
+    copyright: "This website is copyright 2023 theBart",
   },
 };
